@@ -1,2 +1,3 @@
 # 关注我的微信公众号学习更多技术
-《第二行代码》全书的源代码
+
+![qrcode](https://raw.githubusercontent.com/guolindev/booksource/master/qrcode.jpg) 
