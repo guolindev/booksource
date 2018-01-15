@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="tonygreendev@gmail.com"
+        android:text="Tony Green"
         android:textColor="#FFF"
         android:textSize="14sp" />
 
@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/username"
-        android:text="Tony Green"
+        android:text="tonygreendev@gmail.com"
         android:textColor="#FFF"
         android:textSize="14sp" />
 
