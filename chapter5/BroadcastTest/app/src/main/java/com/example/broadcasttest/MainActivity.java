@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent("com.example.broadcasttest.LOCAL_BROADCAST");
+                //如果要在android8上边发送静态广播，需加入Component参数（参数1是自定义广播的包名，参数2是自定义广播的路径）
+                intent.setComponent(new ComponentName("com.example.broadcasttest",
+                        "com.example.broadcasttest.MyBroadcastReceiver"));
                 localBroadcastManager.sendBroadcast(intent); // 发送本地广播
             }
         });
