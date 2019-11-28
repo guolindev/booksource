@@ -20,20 +20,30 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
         resourceId = textViewResourceId;
     }
 
+    /**
+     *
+     * @param position
+     * @param convertView 用于把之前加载好的布局进行缓存。
+     * @param parent
+     * @return
+     */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Fruit fruit = getItem(position); // 获取当前项的Fruit实例
+        // 获取当前项的Fruit实例
+        Fruit fruit = getItem(position);
         View view;
         ViewHolder viewHolder;
         if (convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
             viewHolder = new ViewHolder();
-            viewHolder.fruitImage = (ImageView) view.findViewById (R.id.fruit_image);
-            viewHolder.fruitName = (TextView) view.findViewById (R.id.fruit_name);
-            view.setTag(viewHolder); // 将ViewHolder存储在View中
+            viewHolder.fruitImage = (ImageView) view.findViewById(R.id.fruit_image);
+            viewHolder.fruitName = (TextView) view.findViewById(R.id.fruit_name);
+            // 将ViewHolder存储在View中
+            view.setTag(viewHolder);
         } else {
             view = convertView;
-            viewHolder = (ViewHolder) view.getTag(); // 重新获取ViewHolder
+            // 重新获取ViewHolder
+            viewHolder = (ViewHolder) view.getTag();
         }
         viewHolder.fruitImage.setImageResource(fruit.getImageId());
         viewHolder.fruitName.setText(fruit.getName());
