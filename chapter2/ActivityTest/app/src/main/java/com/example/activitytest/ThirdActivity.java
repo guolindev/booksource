@@ -27,10 +27,14 @@ public class ThirdActivity extends BaseActivity {
 //                intent.setData(Uri.parse("http://www.baidu.com"));
 
 //              拨打电话的例子
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:10086"));
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                intent.setData(Uri.parse("tel:10086"));
+//                startActivity(intent);
 
-                startActivity(intent);
+//               全部退出的例子。
+                ActivityCollector.finishAll();
+//              或者调用killProcess来结束自己的进程。
+                android.os.Process.killProcess(android.os.Process.myPid());
             }
         });
 
