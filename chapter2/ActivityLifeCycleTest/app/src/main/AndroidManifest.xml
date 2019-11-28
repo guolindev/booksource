@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.activitylifecycletest">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <!--tools:ignore="GoogleAppIndexingWarning代表忽略Android提醒的没有加deeplink的页面，可以避免一个警告的提示，
+        deeplink页面是可以提供外部应用或网页直接打开指定程序的指定页面的，
+        比如微信支付宝的支付页面，还有从抖音直接跳转到淘宝的商品详情页面，都是这个意思，这种解决办法是根据提示，
+        添加一个deeplink页面。添加只需要找一个供外部访问的页面增加一个 action view即可-->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
