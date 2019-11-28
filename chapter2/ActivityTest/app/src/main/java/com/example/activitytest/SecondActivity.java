@@ -27,8 +27,13 @@ public class SecondActivity extends BaseActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
-                startActivity(intent);
+//                Intent intent = new Intent(SecondActivity.this, ThirdActivity.class);
+//                startActivity(intent);
+
+                Intent intent = new Intent();
+                intent.putExtra("data_return", "Hello FirstActivity onCreate");
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
     }
@@ -42,7 +47,7 @@ public class SecondActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         Intent intent = new Intent();
-        intent.putExtra("data_return", "Hello FirstActivity");
+        intent.putExtra("data_return", "Hello FirstActivity  onBackPressed");
         setResult(RESULT_OK, intent);
         finish();
     }

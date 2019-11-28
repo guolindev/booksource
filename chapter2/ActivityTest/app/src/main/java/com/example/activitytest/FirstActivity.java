@@ -24,7 +24,10 @@ public class FirstActivity extends BaseActivity {
             public void onClick(View v) {
 //                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 //                startActivity(intent);
-                SecondActivity.actionStart(FirstActivity.this, "data1", "data2");
+//                SecondActivity.actionStart(FirstActivity.this, "data1", "data2");
+
+                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
+                startActivityForResult(intent, 1);
             }
         });
     }
