@@ -3,7 +3,7 @@
     package="com.example.activitytest">
 
     <application
-        android:allowBackup="true"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -31,9 +31,8 @@
         <activity android:name=".ThirdActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
-
+                <category android:name="android.intent.category.BROWSABLE"/>
                 <data android:scheme="http" />
             </intent-filter>
         </activity>
