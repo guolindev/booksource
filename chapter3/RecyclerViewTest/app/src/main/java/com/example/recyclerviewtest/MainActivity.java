@@ -2,6 +2,7 @@ package com.example.recyclerviewtest;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -20,8 +21,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initFruits();
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+
+//        瀑布流布局
         StaggeredGridLayoutManager layoutManager = new
-                StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL);
+                StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+
+//      横向的线性布局
+//        LinearLayoutManager  layoutManager = new LinearLayoutManager(this);
+//        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+
+//        还未实现的GridLayoutManager布局。
+//        GridLayoutManager layoutManager = new GridLayoutManager(this,1);
+
         recyclerView.setLayoutManager(layoutManager);
         FruitAdapter adapter = new FruitAdapter(fruitList);
         recyclerView.setAdapter(adapter);
