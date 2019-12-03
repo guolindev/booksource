@@ -10,4 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <!--    <FrameLayout-->
+    <!--        android:id="@+id/right_layout"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:layout_weight="1" />-->
+
 </LinearLayout>
