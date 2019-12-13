@@ -6,8 +6,8 @@ android {
 
     defaultConfig {
         applicationId "com.example.sharedpreferencestest"
-        minSdkVersion 24
-        targetSdkVersion 28
+        minSdkVersion 26
+        targetSdkVersion 26
         versionCode 1
         versionName "$VERSION"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -32,5 +32,8 @@ dependencies {
 //    仿照官网自己加入的代码
     implementation "org.permissionsdispatcher:permissionsdispatcher:4.6.0"
     annotationProcessor "org.permissionsdispatcher:permissionsdispatcher-processor:4.6.0"
+
+    //Gson序列号对象
+    implementation 'com.google.code.gson:gson:2.8.5'
 
 }
