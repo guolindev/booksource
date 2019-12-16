@@ -1,8 +1,9 @@
-package com.example.sharedpreferencestest;
+package com.otaserver.android.util;
 
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.otaserver.android.dao.DeviceInfo;
 import com.google.gson.Gson;
 
 import java.time.LocalDateTime;
@@ -14,12 +15,12 @@ import java.util.UUID;
  *
  * @author scott
  */
-public class DevInfoGsonUtil {
+public class DeviceInfoGsonUtil {
 
     static DateTimeFormatter appInstallDateFomatter = DateTimeFormatter
             .ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    private static final String TAG = "DevInfoGsonUtil";
+    private static final String TAG = "DeviceInfoGsonUtil";
 
     private static final String GSON_KEY = "gson";
 
@@ -39,7 +40,7 @@ public class DevInfoGsonUtil {
             String uniqueID = UUID.randomUUID().toString();
             deviceInfo.setAppInstallGuid(uniqueID);
             LocalDateTime date = LocalDateTime.now();
-            deviceInfo.setAppInstallDate(DevInfoGsonUtil.appInstallDateFomatter.format(date));
+            deviceInfo.setAppInstallDate(DeviceInfoGsonUtil.appInstallDateFomatter.format(date));
             Log.i(TAG, "create new  appInstallGuid!");
         }
 

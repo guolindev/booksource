@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
+import com.otaserver.android.dao.DeviceInfo;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

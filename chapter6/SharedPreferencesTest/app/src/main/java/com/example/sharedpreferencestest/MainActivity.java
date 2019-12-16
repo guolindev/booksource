@@ -13,6 +13,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.otaserver.android.dao.DeviceInfo;
+import com.otaserver.android.util.DeviceInfoTextUtil;
+
 import permissions.dispatcher.NeedsPermission;
 import permissions.dispatcher.RuntimePermissions;
 
@@ -23,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
 
     static final String sharedPrefsName = "DeviceInfo";
 
-//    DevInfoGsonUtil devInfoUtil = new DevInfoGsonUtil();
-    DevInfoTextUtil devInfoUtil = new DevInfoTextUtil();
+//    DeviceInfoGsonUtil devInfoUtil = new DeviceInfoGsonUtil();
+    DeviceInfoTextUtil devInfoUtil = new DeviceInfoTextUtil();
 
 
     @Override

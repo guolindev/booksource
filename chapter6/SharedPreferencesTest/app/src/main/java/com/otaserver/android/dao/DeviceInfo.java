@@ -1,4 +1,4 @@
-package com.example.sharedpreferencestest;
+package com.otaserver.android.dao;
 
 public class DeviceInfo {
 

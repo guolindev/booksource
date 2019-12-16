@@ -1,5 +1,7 @@
 package com.example.sharedpreferencestest;
 
+import com.otaserver.android.dao.DeviceInfo;
+
 import org.junit.Test;
 
 import java.lang.reflect.Field;

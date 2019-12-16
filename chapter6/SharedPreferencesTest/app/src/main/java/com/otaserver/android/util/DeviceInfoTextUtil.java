@@ -1,8 +1,10 @@
-package com.example.sharedpreferencestest;
+package com.otaserver.android.util;
 
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
+
+import com.otaserver.android.dao.DeviceInfo;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -16,12 +18,12 @@ import java.util.UUID;
  *
  * @author scott
  */
-public class DevInfoTextUtil {
+public class DeviceInfoTextUtil {
 
     static DateTimeFormatter appInstallDateFomatter = DateTimeFormatter
             .ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    private static final String TAG = "DevInfoTextUtil";
+    private static final String TAG = "DeviceInfoTextUtil";
 
 
     Field[] fields = DeviceInfo.class.getDeclaredFields();
@@ -32,7 +34,7 @@ public class DevInfoTextUtil {
      * @param deviceInfo
      * @param pref
      */
-    void save(DeviceInfo deviceInfo, SharedPreferences pref) {
+    public void save(DeviceInfo deviceInfo, SharedPreferences pref) {
 
         SharedPreferences.Editor editor = pref.edit();
         //检查appInstallGuid是否存在
@@ -41,7 +43,7 @@ public class DevInfoTextUtil {
             String uniqueID = UUID.randomUUID().toString();
             deviceInfo.setAppInstallGuid(uniqueID);
             LocalDateTime date = LocalDateTime.now();
-            deviceInfo.setAppInstallDate(DevInfoTextUtil.appInstallDateFomatter.format(date));
+            deviceInfo.setAppInstallDate(DeviceInfoTextUtil.appInstallDateFomatter.format(date));
             Log.i(TAG, "create new  appInstallGuid!");
         }
 
@@ -66,7 +68,7 @@ public class DevInfoTextUtil {
      * @param pref
      * @return
      */
-    DeviceInfo load(SharedPreferences pref) {
+    public DeviceInfo load(SharedPreferences pref) {
         DeviceInfo deviceInfo = new DeviceInfo();
 
         //使用getAll可以返回所有可用的键值
